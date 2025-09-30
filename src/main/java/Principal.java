@@ -11,10 +11,8 @@ public class Principal {
             ServerSocket servidor = new ServerSocket(4444);
             System.out.println("Aguardando cliente!");
             Socket socket = servidor.accept(); // espera
-            System.out.println("Chegou o cliente :"
-                    + socket.getInetAddress().getHostAddress());
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(socket.getInputStream()));
+            System.out.println("Chegou o cliente :" + socket.getInetAddress().getHostAddress());
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             String mensagem = "";
             while ((mensagem = in.readLine()) != null) {
                 System.out.println(mensagem);
